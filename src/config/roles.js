@@ -1,0 +1,51 @@
+﻿// User roles and permissions
+export const ROLES = {
+  ADMIN: 'admin',
+  MANAGER: 'manager', 
+  USER: 'user',
+  GUEST: 'guest'
+};
+
+export const PERMISSIONS = {
+  // User management
+  MANAGE_USERS: 'manage_users',
+  VIEW_USERS: 'view_users',
+  
+  // Content management
+  CREATE_CONTENT: 'create_content',
+  EDIT_CONTENT: 'edit_content', 
+  DELETE_CONTENT: 'delete_content',
+  
+  // System
+  ACCESS_DASHBOARD: 'access_dashboard',
+  VIEW_REPORTS: 'view_reports',
+  MANAGE_SETTINGS: 'manage_settings'
+};
+
+export const ROLE_PERMISSIONS = {
+  [ROLES.ADMIN]: [
+    PERMISSIONS.MANAGE_USERS,
+    PERMISSIONS.VIEW_USERS,
+    PERMISSIONS.CREATE_CONTENT,
+    PERMISSIONS.EDIT_CONTENT,
+    PERMISSIONS.DELETE_CONTENT,
+    PERMISSIONS.ACCESS_DASHBOARD,
+    PERMISSIONS.VIEW_REPORTS,
+    PERMISSIONS.MANAGE_SETTINGS
+  ],
+  [ROLES.MANAGER]: [
+    PERMISSIONS.VIEW_USERS,
+    PERMISSIONS.CREATE_CONTENT,
+    PERMISSIONS.EDIT_CONTENT,
+    PERMISSIONS.ACCESS_DASHBOARD,
+    PERMISSIONS.VIEW_REPORTS
+  ],
+  [ROLES.USER]: [
+    PERMISSIONS.CREATE_CONTENT,
+    PERMISSIONS.EDIT_CONTENT,
+    PERMISSIONS.ACCESS_DASHBOARD
+  ],
+  [ROLES.GUEST]: [
+    PERMISSIONS.VIEW_USERS
+  ]
+};
