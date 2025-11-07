@@ -72,7 +72,6 @@ const Toast = ({ message, type = "info", duration = 5000, onClose }) => {
   );
 };
 
-// Toast Manager
 export const ToastManager = () => {
   const [toasts, setToasts] = useState([]);
 
@@ -103,7 +102,6 @@ export const ToastManager = () => {
   };
 };
 
-// Hook to use toast
 export const useToast = () => {
   const [toastManager] = useState(() => new ToastManager());
   

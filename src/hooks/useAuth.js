@@ -14,7 +14,6 @@ export const useAuth = () => {
         if (docSnap.exists()) {
           setUserProfile(docSnap.data());
         } else {
-          // Create default profile
           setUserProfile({ 
             email: user.email, 
             name: "",
