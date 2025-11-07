@@ -14,11 +14,11 @@ const Toast = ({ message, type = "info", duration = 5000, onClose }) => {
 
   const getBackgroundColor = () => {
     switch (type) {
-      case "success": return "#2ecc71";
-      case "error": return "#e74c3c";
-      case "warning": return "#f39c12";
-      case "info": return "#3498db";
-      default: return "#3498db";
+      case "success": return "#28a745";
+      case "error": return "#dc3545";
+      case "warning": return "#ffc107";
+      case "info": return "#17a2b8";
+      default: return "#6c757d";
     }
   };
 
@@ -36,7 +36,6 @@ const Toast = ({ message, type = "info", duration = 5000, onClose }) => {
       boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
       zIndex: 1000,
       maxWidth: "300px",
-      animation: "slideIn 0.3s ease-out",
       opacity: isVisible ? 1 : 0,
       transition: "opacity 0.3s ease-out"
     }
@@ -73,7 +72,7 @@ const Toast = ({ message, type = "info", duration = 5000, onClose }) => {
   );
 };
 
-// Toast Manager Component
+// Toast Manager
 export const ToastManager = () => {
   const [toasts, setToasts] = useState([]);
 
